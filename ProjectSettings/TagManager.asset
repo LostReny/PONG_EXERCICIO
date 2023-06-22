@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 2
   tags:
   - myPlayer
+  - Ball
   layers:
   - Default
   - TransparentFX

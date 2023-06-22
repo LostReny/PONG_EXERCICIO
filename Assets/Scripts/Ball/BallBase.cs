@@ -6,6 +6,7 @@ public class BallBase : MonoBehaviour
 {
     [Header("Ball speed")]
     public Vector3 speed = new Vector3(1,1,0);
+    public Vector3 startSpeed;
 
     public string tagToCheck = "myPlayer";
 
@@ -13,6 +14,8 @@ public class BallBase : MonoBehaviour
     public Vector2 randSpeedY = new Vector2(1,3);
     public Vector2 randSpeedX = new Vector2(1,3);
 
+    [Header("Star Position")]
+    private Vector3 _starPosition;
 
     // movimento de inversão quando a bola toca em uma colisão
     public void OnCollisionEnter2D(Collision2D collision) {
@@ -42,5 +45,15 @@ public class BallBase : MonoBehaviour
     void Update()
     {
        transform.Translate(speed);
+    }
+
+    public void ResetBall(){
+      transform.position = _starPosition;
+      speed = startSpeed;
+    }
+
+    private void Awake() {
+      _starPosition = transform.position;
+      startSpeed = speed;
     }
 }
