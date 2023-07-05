@@ -17,6 +17,9 @@ public class BallBase : MonoBehaviour
     [Header("Star Position")]
     private Vector3 _starPosition;
 
+    [Header("Move?")]
+    private bool _canMove = false;
+
     // movimento de inversão quando a bola toca em uma colisão
     public void OnCollisionEnter2D(Collision2D collision) {
       if(collision.gameObject.tag == tagToCheck){
@@ -44,7 +47,9 @@ public class BallBase : MonoBehaviour
 
     void Update()
     {
+       if(!_canMove) return;
        transform.Translate(speed);
+       
     }
 
     public void ResetBall(){
@@ -55,5 +60,9 @@ public class BallBase : MonoBehaviour
     private void Awake() {
       _starPosition = transform.position;
       startSpeed = speed;
+    }
+
+    public void CanMove(bool state){
+      _canMove = state;
     }
 }

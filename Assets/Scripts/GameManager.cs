@@ -15,4 +15,8 @@ public class GameManager : MonoBehaviour
     public void Awake() {
         Instantiate = this;
     }
+
+    public void StartGame(){
+      ballBase.CanMove(true);
+   }
 }

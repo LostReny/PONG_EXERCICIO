@@ -14,3 +14,12 @@ public class StateBase : MonoBehaviour
         Debug.Log("OnStateExit");
     }
 }
+
+ public class StatePlaying : StateBase{
+        public override void OnStateEnter(object o = null){
+            base.OnStateEnter(o);
+            BallBase b = (BallBase)o;
+
+            GameManager.Instantiate.StartGame();
+        }
+    }   

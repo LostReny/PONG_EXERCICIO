@@ -22,15 +22,15 @@ public class StateMachine : MonoBehaviour
     private void Awake() {
         DictionaryState = new Dictionary<States, StateBase>();
         DictionaryState.Add(States.menu, new StateBase());
-        DictionaryState.Add(States.playing, new StateBase());
+        DictionaryState.Add(States.playing, new StatePlaying());
         DictionaryState.Add(States.resetPosition, new StateBase());
         DictionaryState.Add(States.endGame, new StateBase());
         SwitchStates(States.menu);
     }
 
-    private void Start(){
+    /*private void StartGame(){
         SwitchStates(States.menu);
-    }
+    }*/
     
     private void SwitchStates(States state)
    {
@@ -50,10 +50,10 @@ public class StateMachine : MonoBehaviour
          _currentState.OnStateStay();
       }
 
-     /* if (Input.GetKeyDown(KeyCode.Q))
+      if (Input.GetKeyDown(KeyCode.Q)) 
       {
          SwitchStates(States.playing);
-      }*/
+      }
    }
-    
+
 }
