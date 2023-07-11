@@ -6,11 +6,24 @@ public class GameManager : MonoBehaviour
 {
    public BallBase ballBase;
 
+   public float timeToRelease = 1f;
+
+   public StateMachine stateMachine;
+
    public static GameManager Instantiate;
 
-    public void ResetBallPositon(){
+
+    public void ResetBall(){
+        ballBase.CanMove(false);
         ballBase.ResetBall();
+        Invoke(nameof(SetBallFree), timeToRelease);
     }
+
+    private void SetBallFree(){
+        ballBase.CanMove(true);
+
+    }
+
 
     public void Awake() {
         Instantiate = this;

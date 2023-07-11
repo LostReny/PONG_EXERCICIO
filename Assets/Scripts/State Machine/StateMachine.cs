@@ -18,12 +18,17 @@ public class StateMachine : MonoBehaviour
     public Player player;
     public float timeToStartGame = 1f;
 
+    public static StateMachine Instance;
+
 
     private void Awake() {
+
+      Instance = this;
+
         DictionaryState = new Dictionary<States, StateBase>();
         DictionaryState.Add(States.menu, new StateBase());
         DictionaryState.Add(States.playing, new StatePlaying());
-        DictionaryState.Add(States.resetPosition, new StateBase());
+        DictionaryState.Add(States.resetPosition, new StateResetPosition());
         DictionaryState.Add(States.endGame, new StateBase());
         SwitchStates(States.menu);
     }
@@ -54,6 +59,10 @@ public class StateMachine : MonoBehaviour
       {
          SwitchStates(States.playing);
       }
+   }
+
+   public void ResetPosition(){
+      SwitchStates(States.resetPosition);
    }
 
 }

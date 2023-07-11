@@ -18,6 +18,6 @@ public class TriggerPoint : MonoBehaviour
 
     private void CountPoint(){
         player.AddPoint();
-        GameManager.Instantiate.ResetBallPositon();
+        StateMachine.Instance.ResetPosition();
     }
 }

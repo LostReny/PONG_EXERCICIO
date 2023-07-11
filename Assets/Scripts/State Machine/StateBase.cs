@@ -22,4 +22,12 @@ public class StateBase : MonoBehaviour
 
             GameManager.Instantiate.StartGame();
         }
+    } 
+
+public class StateResetPosition : StateBase{
+        public override void OnStateEnter(object o = null){
+            base.OnStateEnter(o);
+
+            GameManager.Instantiate.ResetBall();
+        }
     }   
