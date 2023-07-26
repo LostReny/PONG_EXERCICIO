@@ -46,6 +46,7 @@ public class StateMachine : MonoBehaviour
 
       _currentState = DictionaryState[state];
       _currentState.OnStateEnter(player);
+      if(_currentState != null){ _currentState.OnStateEnter();}
    }
 
    private void Update()
