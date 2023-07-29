@@ -30,4 +30,12 @@ public class StateResetPosition : StateBase{
 
             GameManager.Instantiate.ResetBall();
         }
+    }
+
+    public class StateEndGame : StateBase{
+        public override void OnStateEnter(object o = null){
+            base.OnStateEnter(o);
+
+            GameManager.Instantiate.ShowMainMenu();
+        }
     }   

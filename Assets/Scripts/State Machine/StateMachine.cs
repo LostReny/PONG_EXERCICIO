@@ -37,7 +37,7 @@ public class StateMachine : MonoBehaviour
         SwitchStates(States.menu);
     }*/
     
-    private void SwitchStates(States state)
+    public void SwitchStates(States state)
    {
       if (_currentState != null)
       {

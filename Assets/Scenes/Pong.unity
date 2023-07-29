@@ -1025,6 +1025,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b2034711be6d74f95c42049f9e7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPoints: 3
   speed: 15
   KeyCodeMoveUp: 111
   KeyCodeMoveDown: 108
@@ -1170,6 +1171,7 @@ MonoBehaviour:
   ballBase: {fileID: 1936317233}
   timeToRelease: 1
   stateMachine: {fileID: 815912936}
+  uiMainMenu: {fileID: 484359120}
 --- !u!4 &680645112
 Transform:
   m_ObjectHideFlags: 0
@@ -1733,6 +1735,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59b2034711be6d74f95c42049f9e7e15, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxPoints: 3
   speed: 15
   KeyCodeMoveUp: 119
   KeyCodeMoveDown: 115

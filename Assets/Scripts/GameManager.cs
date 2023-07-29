@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
 
    public static GameManager Instantiate;
 
+   [Header ("Menus")]
+   public GameObject uiMainMenu;
+
 
     public void ResetBall(){
         ballBase.CanMove(false);
@@ -31,5 +34,14 @@ public class GameManager : MonoBehaviour
 
     public void StartGame(){
       ballBase.CanMove(true);
+   }
+
+   public void ShowMainMenu(){
+    uiMainMenu.SetActive(true);
+    ballBase.CanMove(false);
+   }
+
+   public void EndGame(){
+    stateMachine.SwitchStates(StateMachine.States.endGame);
    }
 }

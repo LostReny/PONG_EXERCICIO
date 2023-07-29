@@ -6,6 +6,7 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     //variables
+    public int maxPoints = 3;
     public float speed = 10f;
 
     [Header("Key Setup")]
@@ -33,6 +34,7 @@ public class Player : MonoBehaviour
     public void AddPoint(){
         currentPoints ++;
         UpdateUi();
+        CheckMaxPoints();
     }
 
     public void ResetPlayer(){
@@ -46,5 +48,11 @@ public class Player : MonoBehaviour
 
     private void UpdateUi(){
         uiTextPoints.text = currentPoints.ToString();
+    }
+
+    public void CheckMaxPoints(){
+        if(currentPoints >= maxPoints){
+            GameManager.Instantiate.EndGame();
+        }
     }
 }
