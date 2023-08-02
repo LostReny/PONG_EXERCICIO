@@ -29,7 +29,7 @@ public class StateMachine : MonoBehaviour
         DictionaryState.Add(States.menu, new StateBase());
         DictionaryState.Add(States.playing, new StatePlaying());
         DictionaryState.Add(States.resetPosition, new StateResetPosition());
-        DictionaryState.Add(States.endGame, new StateBase());
+        DictionaryState.Add(States.endGame, new StateEndGame());
         SwitchStates(States.menu);
     }
 

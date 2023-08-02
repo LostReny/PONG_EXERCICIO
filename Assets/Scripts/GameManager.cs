@@ -44,4 +44,5 @@ public class GameManager : MonoBehaviour
    public void EndGame(){
     stateMachine.SwitchStates(StateMachine.States.endGame);
    }
+
 }
