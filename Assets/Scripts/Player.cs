@@ -6,7 +6,7 @@ using TMPro;
 public class Player : MonoBehaviour
 {
     //variables
-    public int maxPoints = 3;
+    public int maxPoints;
     public float speed = 10f;
 
     [Header("Key Setup")]
