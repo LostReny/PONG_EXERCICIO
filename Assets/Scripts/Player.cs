@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 public class Player : MonoBehaviour
@@ -21,6 +22,9 @@ public class Player : MonoBehaviour
 
     [Header("TextPoints")]
     public TextMeshProUGUI uiTextPoints;
+
+    [Header("Image")]
+    public Image playerImg;
 
     void Update() {
         if(Input.GetKey(KeyCodeMoveUp)){
@@ -44,6 +48,10 @@ public class Player : MonoBehaviour
 
     private void Awake() {
         ResetPlayer();
+    }
+
+    public void ChangeColor(Color c){
+        playerImg.color = c; 
     }
 
     private void UpdateUi(){

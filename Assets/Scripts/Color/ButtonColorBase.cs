@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class ButtonColorBase : MonoBehaviour
 {
    public Color color;
+   public Player myPlayer;
 
    [Header ("Reference")]
    public Image uiImage;
@@ -20,6 +21,6 @@ public class ButtonColorBase : MonoBehaviour
    }
 
    public void OnClick(){
-    
+    myPlayer.ChangeColor(color);
    }
 }

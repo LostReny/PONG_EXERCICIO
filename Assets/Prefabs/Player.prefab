@@ -144,3 +144,4 @@ MonoBehaviour:
   currentPoints: 0
   myRigid: {fileID: 6293614136025517295}
   uiTextPoints: {fileID: 0}
+  playerImg: {fileID: 1461972476562583502}
