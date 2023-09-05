@@ -10,6 +10,7 @@ public class ChangeName : MonoBehaviour
     public TextMeshProUGUI UITextMeshPro;
     public TMP_InputField inputField;
     public GameObject changeNameInput;
+    public Player player;
     
     private string playerName;
 
@@ -17,6 +18,6 @@ public class ChangeName : MonoBehaviour
         playerName = inputField.text;
         UITextMeshPro.text = playerName;
         changeNameInput.SetActive(false);
+        player.SetName(playerName);
     }
-
 }

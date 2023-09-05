@@ -9,6 +9,7 @@ public class Player : MonoBehaviour
     //variables
     public int maxPoints;
     public float speed = 10f;
+    public string playerName;
 
     [Header("Key Setup")]
     public KeyCode KeyCodeMoveUp = KeyCode.UpArrow;
@@ -50,6 +51,11 @@ public class Player : MonoBehaviour
         ResetPlayer();
     }
 
+    public void SetName(string n) {
+        playerName = n;
+    }
+       
+
     public void ChangeColor(Color c){
         playerImg.color = c; 
     }
@@ -61,6 +67,7 @@ public class Player : MonoBehaviour
     public void CheckMaxPoints(){
         if(currentPoints >= maxPoints){
             GameManager.Instantiate.EndGame();
+            HighscoreManager.Instantiate.SavePlayerWin(this);
         }
     }
 }
